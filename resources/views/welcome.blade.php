@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Simple Sidebar</h1>
-    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+    @auth
+        <h2>You are logged in, yay!</h2>
+    @endauth
+
+    @guest
+        <h2>You are not logged in.</h2>
+
+        <p>Unfortunately, you can only access this site if you are an authorized user of this site.</p>
+    @endguest
 @endsection

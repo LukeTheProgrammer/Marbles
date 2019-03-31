@@ -4,9 +4,14 @@
             Henry Marbles
         </a>
     </li>
-    <li>
-        <a href="/">Dashboard</a>
-    </li>
+
+    @auth 
+        <li>
+            <a href="{{ route('child.index') }}">
+                Children
+            </a>
+        </li>
+    @endauth
     
     <li class="px-3">
         <div class="dropdown-divider"></div>
