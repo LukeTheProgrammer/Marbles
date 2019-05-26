@@ -15,7 +15,12 @@ class Child extends Model
       'name',
     ];
 
+    public function marbleActivities()
+    {
+        return $this->hasMany('App\MarbleActivity');
+    }
 
+    /*
     public function addMarble () {
       $this->marbles = $this->marbles + 1;
       $this->save();
@@ -25,4 +30,5 @@ class Child extends Model
       $this->marbles = $this->marbles - 1;
       $this->save();
     }
+    */
 }

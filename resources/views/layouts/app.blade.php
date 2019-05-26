@@ -17,9 +17,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('style')
+
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -45,7 +48,7 @@
     </div>
     <!-- /#wrapper -->
 
-
+    @stack('script')
 
 </body>
 </html>

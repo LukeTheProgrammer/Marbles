@@ -66,7 +66,7 @@ class ChildController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show ($id, Request $request) {
+    public function show (Request $request, $id, $date = null) {
         $child = Child::findOrFail($id);
 
         return view('child.show', [
@@ -113,7 +113,7 @@ class ChildController extends Controller
 
         return redirect()
             ->route('child.show', [$id])
-            ->with('success_msg', 'Child was successfully added.');
+            ->with('success_msg', 'Child was successfully updated.');
     }
 
     /**
