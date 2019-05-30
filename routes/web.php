@@ -11,16 +11,6 @@
 |
 */
 
-Auth::routes();
-
-Route::get('', 'HomeController@index')->name('index');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/test', 'HomeController@test')->name('test');
-
-Route::resource('child', 'ChildController');
-
-Route::resource('marble', 'MarbleController');
-
-Route::resource('marble-activity', 'MarbleActivityController');
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/{any}', 'LaravueController@index')->where('any', '.*');
+});
